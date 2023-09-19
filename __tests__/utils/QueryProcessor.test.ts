@@ -33,9 +33,14 @@ describe("QueryProcessor", () => {
             "I dont know your name."
           ));
     });
-    
+
     test('should add numbers', () => {
         expect(QueryProcessor("What is 5 plus 52?")).toEqual("57");
         expect(QueryProcessor("What is 12 plus 1?")).toEqual("13");
+    });
+
+    test('should find the max number', () => {
+        expect(QueryProcessor("Which of the following numbers is the largest: 13, 42, 26?")).toEqual("42");
+        expect(QueryProcessor("Which of the following numbers is the largest: 45, 5, 99?")).toEqual("99");
     });
 });
