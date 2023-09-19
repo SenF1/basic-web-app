@@ -38,5 +38,23 @@ export default function QueryProcessor(query: string): string {
     return (x*y).toString();
   }
 
+  const squareCubeMatch = query.match(/Which of the following numbers is both a square and a cube: (\d+), (\d+), (\d+), (\d+), (\d+), (\d+), (\d+)/);
+  if (squareCubeMatch) {
+    const a: number = parseInt(squareCubeMatch[1]);
+    const b: number = parseInt(squareCubeMatch[2]);
+    const c: number = parseInt(squareCubeMatch[3]);
+    const d: number = parseInt(squareCubeMatch[4]);
+    const e: number = parseInt(squareCubeMatch[5]);
+    const f: number = parseInt(squareCubeMatch[6]);
+    const g: number = parseInt(squareCubeMatch[6]);
+    if (Math.sqrt(a) % 1 == 0 && Math.cbrt(a) % 1 == 0){return a.toString();} 
+    else if (Math.sqrt(b) % 1 == 0 && Math.cbrt(b) % 1 == 0){return b.toString();} 
+    else if (Math.sqrt(c) % 1 == 0 && Math.cbrt(c) % 1 == 0){return c.toString();} 
+    else if (Math.sqrt(d) % 1 == 0 && Math.cbrt(d) % 1 == 0){return d.toString();} 
+    else if (Math.sqrt(e) % 1 == 0 && Math.cbrt(e) % 1 == 0){return e.toString();} 
+    else if (Math.sqrt(f) % 1 == 0 && Math.cbrt(f) % 1 == 0){return f.toString();} 
+    else return g.toString(); 
+  }
+
   return "";
 }
