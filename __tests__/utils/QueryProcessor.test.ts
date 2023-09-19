@@ -59,4 +59,9 @@ describe("QueryProcessor", () => {
         expect(QueryProcessor("Which of the following numbers is both a square and a cube: 1855, 4642, 2197, 1, 4900, 4451, 3146?")).toEqual("1");
     });
 
+    test('should power numbers', () => {
+        expect(QueryProcessor("What is 2 to the power of 2?")).toEqual("4");
+        expect(QueryProcessor("What is 12 to the power of 2?")).toEqual("144");
+    });
+
 });
